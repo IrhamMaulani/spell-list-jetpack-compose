@@ -10,11 +10,14 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.jetpackcomposedemo.homescreen.HomeScreen
-import com.example.jetpackcomposedemo.route.MainRoute
+import com.example.jetpackcomposedemo.ui.screen.catlist.CatList
+import com.example.jetpackcomposedemo.ui.screen.homescreen.HomeScreen
+import com.example.jetpackcomposedemo.ui.screen.route.CatList
+import com.example.jetpackcomposedemo.ui.screen.route.Home
 import com.example.jetpackcomposedemo.ui.theme.JetpackComposeDemoTheme
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -27,10 +30,13 @@ class MainActivity : ComponentActivity() {
                     val navController = rememberNavController()
                     NavHost(
                         navController = navController,
-                        startDestination = MainRoute.HomeScreen.route
+                        startDestination = Home
                     ) {
-                        composable(route = MainRoute.HomeScreen.route) {
+                        composable<Home> {
                             HomeScreen(navController = navController)
+                        }
+                        composable<CatList> {
+                            CatList(navController = navController)
                         }
                     }
                 }

@@ -1,4 +1,4 @@
-package com.example.jetpackcomposedemo.potionlist
+package com.example.jetpackcomposedemo.ui.screen.potionlist
 
 import androidx.compose.runtime.Composable
 

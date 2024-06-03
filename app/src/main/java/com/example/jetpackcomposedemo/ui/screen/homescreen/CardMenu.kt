@@ -1,9 +1,10 @@
-package com.example.jetpackcomposedemo.homescreen
+package com.example.jetpackcomposedemo.ui.screen.homescreen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -35,6 +36,7 @@ fun CardMenu(
                 painter = painterResource(id = drawableImage),
                 contentDescription = "potion",
                 modifier = Modifier
+                    .size(150.dp)
                     .padding(all = 24.dp)
             )
         }

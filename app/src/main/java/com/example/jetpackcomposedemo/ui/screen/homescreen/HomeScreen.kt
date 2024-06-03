@@ -1,4 +1,4 @@
-package com.example.jetpackcomposedemo.homescreen
+package com.example.jetpackcomposedemo.ui.screen.homescreen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -13,30 +13,37 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.jetpackcomposedemo.R
+import com.example.jetpackcomposedemo.ui.screen.route.CatList
 
 
 @Composable
 fun HomeScreen(navController: NavController) {
     Surface() {
         Row(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
             CardMenu(
-                title = "Potion",
-                drawableImage = R.drawable.potion,
+                title = "Cat",
+                drawableImage = R.drawable.cat,
                 Modifier.padding(start = 24.dp),
-                onclick = {}
+                onclick = { navToCatPage(navController) }
             )
             CardMenu(
-                title = "Spell",
-                drawableImage = R.drawable.spell,
+                title = "Dog",
+                drawableImage = R.drawable.dog,
                 Modifier.padding(end = 24.dp),
                 onclick = {}
             )
         }
     }
+}
+
+fun navToCatPage(navController: NavController) {
+    navController.navigate(CatList)
 }
 
 
